@@ -1,0 +1,168 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SymptomsSidebar from '../../../components/SymptomsSidebar.astro';
+
+const title = "食いしばりとは | 朝の顎の疲れから歯のすり減りまで【福岡市早良区アゴケア整体】";
+const description = "食いしばりの原因・連鎖症状・マウスピースとの違い・整体でできることを専門院がわかりやすく解説。朝の顎の疲れ、エラ張り、マウスピースが効かないお悩みに、福岡市早良区の食いしばり専門院がお応えします。";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "食いしばり",
+  "associatedAnatomy": ["顎関節", "咬筋", "側頭筋"],
+  "signOrSymptom": [
+    "朝起きた時の顎のだるさ",
+    "歯のすり減り",
+    "エラの張り",
+    "頭痛",
+    "肩こり"
+  ],
+  "possibleTreatment": {
+    "@type": "TherapeuticProcedure",
+    "name": "整体によるアプローチ"
+  }
+};
+
+const clusters = [
+  { num: "A01", href: "/symptoms/kuishibari/morning-jaw-fatigue", title: "朝起きると顎がだるい・痛い" },
+  { num: "A02", href: "/symptoms/kuishibari/desk-work-bruxism", title: "デスクワーク中の食いしばり" },
+  { num: "A03", href: "/symptoms/kuishibari/mouthpiece-ineffective", title: "マウスピースを使っても改善しない" },
+  { num: "A04", href: "/symptoms/kuishibari/shoulder-neck-stiffness", title: "肩こり・首こりが一緒にひどい" },
+  { num: "A05", href: "/symptoms/kuishibari/kids-bruxism", title: "子どもの食いしばりが気になる" },
+  { num: "A06", href: "/symptoms/kuishibari/stress-and-bruxism", title: "ストレスで食いしばりが悪化する" },
+  { num: "A07", href: "/symptoms/kuishibari/tooth-wear", title: "歯がすり減ってきた" },
+  { num: "A08", href: "/symptoms/kuishibari/self-check", title: "食いしばりセルフチェック5項目" },
+  { num: "A09", href: "/symptoms/kuishibari/ela-and-bruxism", title: "エラ張りが気になる" },
+  { num: "A10", href: "/symptoms/kuishibari/night-routine", title: "就寝前のセルフケアルーティン" }
+];
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li><a href="/symptoms">症状から探す</a></li>
+        <li aria-current="page">食いしばり</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">PILLAR ／ KUISHIBARI</span>
+      <h1>食いしばりに悩むあなたへ</h1>
+      <p class="article-lead">
+        朝起きると顎がだるい、歯がすり減る、エラが張る——。<br>
+        マウスピースでは届かなかった「咬筋」のこわばりに、整体でアプローチします。
+      </p>
+    </div>
+  </section>
+
+  <div class="article-with-sidebar">
+  <article class="article-body">
+
+    <!-- 目次 -->
+    <div class="toc">
+      <p class="toc-title">この記事の目次</p>
+      <ol class="toc-list">
+        <li><a href="#what">食いしばりとは</a></li>
+        <li><a href="#causes">食いしばりの主な5つの原因</a></li>
+        <li><a href="#chain">食いしばりがもたらす連鎖（頭痛・肩こり等）</a></li>
+        <li><a href="#vs-dental">マウスピース・歯科治療との違い</a></li>
+        <li><a href="#approach">当院の整体アプローチ</a></li>
+        <li><a href="#clusters">症状別の詳しい解説</a></li>
+      </ol>
+    </div>
+
+    <h2 id="what">食いしばりとは</h2>
+    <p>
+      食いしばりとは、本来上下の歯が触れ合わないはずの時間（リラックス時・睡眠時など）に、無意識に強く噛みしめている状態のこと。日中の集中作業中や、夜間睡眠中に起こることが多く、本人に自覚がないケースも珍しくありません。
+    </p>
+    <p>
+      食事中の咀嚼力が一般に40〜60kgなのに対し、食いしばり時には<strong>数百kgの力</strong>がかかると言われており、長期間続くと「咬筋」「側頭筋」「首」のこわばりや、歯のすり減り・エラ張りなど、お顔と全身に波及していきます。
+    </p>
+
+    <h2 id="causes">食いしばりの主な5つの原因</h2>
+    <p>食いしばりは、ひとつの原因で起こるわけではありません。当院でよく見られるのは次の5つです。</p>
+    <ol>
+      <li><strong>ストレス</strong>：精神的な緊張・不安が筋肉のこわばりを誘発</li>
+      <li><strong>姿勢のクセ</strong>：猫背・ストレートネック・前傾姿勢が顎位に影響</li>
+      <li><strong>集中作業</strong>：PC・スマホ・運転など、一点凝視時の無意識の噛みしめ</li>
+      <li><strong>かみ合わせ・顎関節の歪み</strong>：構造的に食いしばりやすい状態</li>
+      <li><strong>睡眠の質低下</strong>：浅い眠り・歯ぎしりとの併発</li>
+    </ol>
+
+    <h2 id="chain">食いしばりがもたらす連鎖</h2>
+    <p>食いしばりを放置すると、お口まわりだけでなく全身に症状が波及していきます。</p>
+    <ul>
+      <li><strong>頭痛</strong>：側頭筋のこわばりから「こめかみの痛み」「緊張型頭痛」へ</li>
+      <li><strong>顎関節症</strong>：顎への過剰負担で「カクッと音」「口が開きにくい」へ</li>
+      <li><strong>肩こり・首こり</strong>：咬筋から首・肩へ筋緊張が波及</li>
+      <li><strong>歯のトラブル</strong>：歯のすり減り、欠け、知覚過敏</li>
+      <li><strong>エラ張り・顔の歪み</strong>：咬筋の発達でフェイスラインに影響</li>
+    </ul>
+    <p>このように、食いしばりは<strong>「単独の症状」ではなく「他の不調の起点」</strong>になっていることが多い症状です。</p>
+
+    <h2 id="vs-dental">マウスピース・歯科治療との違い</h2>
+    <p>歯科で処方されるマウスピース（ナイトガード）は、<strong>「歯を守る」役割</strong>として非常に有効です。歯のすり減りや欠けを物理的に防いでくれます。</p>
+    <p>一方で、マウスピースは<strong>食いしばりそのものを止めるものではありません</strong>。咬筋・側頭筋のこわばりは残り、頭痛や顎関節症の連鎖症状にはアプローチしきれません。</p>
+    <p>整体は<strong>「筋肉のこわばりと姿勢のクセに直接アプローチ」</strong>することが役割です。歯科のマウスピース×整体の手技を併用すると、相乗効果を実感される方が多くいらっしゃいます。</p>
+
+    <h2 id="approach">当院の整体アプローチ</h2>
+    <p>アゴケア整体では、食いしばりを<strong>「咬筋・側頭筋・首・姿勢」の連鎖</strong>として見立て、以下の流れでアプローチします。</p>
+    <ol>
+      <li>カウンセリング：症状・生活習慣・既往歴のヒアリング</li>
+      <li>姿勢・顎位の評価：歪みや左右差をチェック</li>
+      <li>筋肉のリリース：咬筋・側頭筋・首のこわばりを整体の手技で緩める</li>
+      <li>姿勢の調整：ストレートネックや猫背を整え、根本要因にアプローチ</li>
+      <li>セルフケア指導：日常生活で再発を防ぐ習慣のご提案</li>
+    </ol>
+
+    <h2 id="clusters">症状別の詳しい解説</h2>
+    <p>「自分の悩みに近いもの」を選んで詳しく読んでください。</p>
+    <div class="cluster-grid">
+      {clusters.map((c) => (
+        <a href={c.href} class="cluster-card">
+          <span class="cluster-number">{c.num}</span>
+          <span class="cluster-title">{c.title}</span>
+          <span class="cluster-arrow">→</span>
+        </a>
+      ))}
+    </div>
+
+  </article>
+  <SymptomsSidebar />
+  </div>
+
+  <!-- 関連Pillar -->
+  <section class="related-pillars">
+    <div class="container">
+      <span class="section-eyebrow">RELATED</span>
+      <h2 class="section-title">関連する症状</h2>
+      <p class="section-subtitle">食いしばりと連鎖して起こりやすい症状</p>
+      <div class="related-pillars-grid">
+        <a href="/symptoms/headache" class="symptom-card">
+          <div class="emoji">🤕</div>
+          <h3>頭痛</h3>
+          <p>側頭筋のこわばりから起こる緊張型頭痛のお悩み</p>
+        </a>
+        <a href="/symptoms/tmj" class="symptom-card">
+          <div class="emoji">😬</div>
+          <h3>顎関節症</h3>
+          <p>顎の負担蓄積による「カクッ」「開きにくい」のお悩み</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>食いしばりのお悩み、ご相談ください</h2>
+      <p>マウスピースだけでは届かない、根本のこわばりへ。</p>
+      <a href="/#reservation" class="cta-button large">初回相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>

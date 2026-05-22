@@ -1,0 +1,141 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SymptomsSidebar from '../../../components/SymptomsSidebar.astro';
+
+const title = "頭痛とは | 緊張型・片頭痛・天気痛【福岡市早良区アゴケア整体】";
+const description = "緊張型頭痛・片頭痛・天気痛など、慢性化した頭痛のお悩みに福岡市早良区の食いしばり専門アゴケア整体がアプローチ。鎮痛剤を減らしたい方、生理周期・天気で悪化する頭痛にも対応。";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "頭痛",
+  "associatedAnatomy": ["側頭筋", "後頭部", "首", "肩"],
+  "signOrSymptom": ["こめかみの痛み", "後頭部の重さ", "目の奥の痛み", "片頭痛", "天気痛"],
+  "possibleTreatment": { "@type": "TherapeuticProcedure", "name": "整体によるアプローチ" }
+};
+
+const clusters = [
+  { num: "B01", href: "/symptoms/headache/tension-headache", title: "緊張型頭痛が慢性化している" },
+  { num: "B02", href: "/symptoms/headache/temple-headache", title: "こめかみがズキズキ痛む" },
+  { num: "B03", href: "/symptoms/headache/occipital-headache", title: "後頭部が重く痛む" },
+  { num: "B04", href: "/symptoms/headache/eye-pressure-headache", title: "目の奥が痛い" },
+  { num: "B05", href: "/symptoms/headache/menstrual-headache", title: "生理周期で頭痛が悪化する" },
+  { num: "B06", href: "/symptoms/headache/weather-headache", title: "天気で頭痛が悪化する（天気痛）" },
+  { num: "B07", href: "/symptoms/headache/reduce-painkillers", title: "鎮痛剤を減らしたい" },
+  { num: "B08", href: "/symptoms/headache/headache-with-shoulder", title: "頭痛と肩こりが同時にひどい" },
+  { num: "B09", href: "/symptoms/headache/morning-headache", title: "朝起きると頭痛がする" },
+  { num: "B10", href: "/symptoms/headache/migraine-care", title: "片頭痛の頻度を減らしたい" }
+];
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li><a href="/symptoms">症状から探す</a></li>
+        <li aria-current="page">頭痛</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">PILLAR ／ HEADACHE</span>
+      <h1>頭痛に悩むあなたへ</h1>
+      <p class="article-lead">
+        こめかみ・後頭部・目の奥の痛み。生理周期や天気で悪化する慢性頭痛——。<br>
+        「鎮痛剤に頼らない毎日」を、整体で目指していきます。
+      </p>
+    </div>
+  </section>
+
+  <div class="article-with-sidebar">
+  <article class="article-body">
+
+    <div class="toc">
+      <p class="toc-title">この記事の目次</p>
+      <ol class="toc-list">
+        <li><a href="#types">慢性頭痛の主な3タイプ</a></li>
+        <li><a href="#tension">緊張型頭痛と食いしばりの関係</a></li>
+        <li><a href="#painkillers">鎮痛剤を減らすには</a></li>
+        <li><a href="#approach">当院の整体アプローチ</a></li>
+        <li><a href="#clusters">症状別の詳しい解説</a></li>
+      </ol>
+    </div>
+
+    <h2 id="types">慢性頭痛の主な3タイプ</h2>
+    <p>頭痛は大きく分けて3タイプあります。当院で多いのは「緊張型頭痛」と「混合型」です。</p>
+    <ul>
+      <li><strong>緊張型頭痛</strong>：頭全体・後頭部・首が締め付けられるような鈍痛。長時間続く</li>
+      <li><strong>片頭痛</strong>：こめかみがズキズキ脈打つ痛み。光・音・天気で悪化</li>
+      <li><strong>群発頭痛</strong>：目の奥に激痛、一定期間集中して起こる</li>
+    </ul>
+
+    <h2 id="tension">緊張型頭痛と食いしばりの関係</h2>
+    <p>緊張型頭痛は、首・肩・側頭部の筋肉のこわばりが原因です。食いしばりがあると<strong>側頭筋がカチカチに緊張</strong>するため、「こめかみが痛い」「目の奥が痛い」という頭痛が頻発します。</p>
+    <p>当院で食いしばり起点のアプローチをすると、頭痛も同時に和らいでいくケースが多くあります。</p>
+
+    <h2 id="painkillers">鎮痛剤を減らすには</h2>
+    <p>鎮痛剤の常用は「薬物乱用頭痛」を引き起こすことがあると言われています。鎮痛剤に頼らない方法を探している方は、まず以下のステップでご相談ください。</p>
+    <ol>
+      <li>頭痛のタイプを見立てる</li>
+      <li>原因となる筋肉のこわばり・姿勢のクセを整える</li>
+      <li>生活習慣（睡眠・水分・食事）のセルフケア</li>
+    </ol>
+
+    <h2 id="approach">当院の整体アプローチ</h2>
+    <p>頭痛のお悩みも、食いしばり起点で見立てていきます。</p>
+    <ol>
+      <li>頭痛のタイプ・頻度・きっかけの丁寧なヒアリング</li>
+      <li>首・肩・側頭筋・咬筋の状態を評価</li>
+      <li>整体の手技で筋肉のこわばりにアプローチ</li>
+      <li>姿勢の調整と再発予防のセルフケア指導</li>
+    </ol>
+
+    <h2 id="clusters">症状別の詳しい解説</h2>
+    <p>「自分の頭痛に近いもの」を選んでお読みください。</p>
+    <div class="cluster-grid">
+      {clusters.map((c) => (
+        <a href={c.href} class="cluster-card">
+          <span class="cluster-number">{c.num}</span>
+          <span class="cluster-title">{c.title}</span>
+          <span class="cluster-arrow">→</span>
+        </a>
+      ))}
+    </div>
+
+  </article>
+  <SymptomsSidebar />
+  </div>
+
+  <section class="related-pillars">
+    <div class="container">
+      <span class="section-eyebrow">RELATED</span>
+      <h2 class="section-title">関連する症状</h2>
+      <p class="section-subtitle">頭痛と連鎖して起こりやすい症状</p>
+      <div class="related-pillars-grid">
+        <a href="/symptoms/kuishibari" class="symptom-card">
+          <div class="emoji">🦷</div>
+          <h3>食いしばり</h3>
+          <p>緊張型頭痛の隠れた原因かもしれません</p>
+        </a>
+        <a href="/symptoms/tmj" class="symptom-card">
+          <div class="emoji">😬</div>
+          <h3>顎関節症</h3>
+          <p>顎の負担から頭痛に波及するケース</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>頭痛のお悩み、ご相談ください</h2>
+      <p>鎮痛剤に頼らない毎日を、整体で目指していきましょう。</p>
+      <a href="/#reservation" class="cta-button large">初回相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>

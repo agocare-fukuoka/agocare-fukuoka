@@ -1,0 +1,143 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SymptomsSidebar from '../../../components/SymptomsSidebar.astro';
+
+const title = "顎関節症とは | 口が開かない・カクッと音【福岡市早良区アゴケア整体】";
+const description = "口が開きにくい、顎がカクッと鳴る、顎の左右差、耳の違和感など、顎関節症のお悩みに福岡市早良区の食いしばり専門アゴケア整体がアプローチします。";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "顎関節症",
+  "associatedAnatomy": ["顎関節", "咬筋", "外側翼突筋"],
+  "signOrSymptom": ["開口障害", "クリック音", "顎の痛み", "耳の違和感", "顎の左右差"],
+  "possibleTreatment": { "@type": "TherapeuticProcedure", "name": "整体によるアプローチ" }
+};
+
+const clusters = [
+  { num: "C01", href: "/symptoms/tmj/cant-open-mouth", title: "口が開きにくい・開かない" },
+  { num: "C02", href: "/symptoms/tmj/clicking-sound", title: "顎を動かすとカクッと音がする" },
+  { num: "C03", href: "/symptoms/tmj/jaw-asymmetry", title: "顎の左右差が気になる" },
+  { num: "C04", href: "/symptoms/tmj/2-finger-opening", title: "指2本分しか口が開かない" },
+  { num: "C05", href: "/symptoms/tmj/jaw-ear-pain", title: "顎まわり・耳の痛みや耳鳴り" },
+  { num: "C06", href: "/symptoms/tmj/orthodontics-jaw", title: "矯正治療中の顎の不調" },
+  { num: "C07", href: "/symptoms/tmj/sports-mouthguard", title: "スポーツマウスガードを使う方の顎ケア" },
+  { num: "C08", href: "/symptoms/tmj/cheek-tension", title: "頬の張り・突っ張り感" },
+  { num: "C09", href: "/symptoms/tmj/food-habits", title: "顎関節症の人が避けたい食習慣" },
+  { num: "C10", href: "/symptoms/tmj/self-check", title: "顎関節症セルフチェック" }
+];
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li><a href="/symptoms">症状から探す</a></li>
+        <li aria-current="page">顎関節症</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">PILLAR ／ TMJ</span>
+      <h1>顎関節症に悩むあなたへ</h1>
+      <p class="article-lead">
+        口が開きにくい、顎の音、左右差、耳の違和感——。<br>
+        日常生活の質を下げる顎まわりのお悩みに、整体でアプローチします。
+      </p>
+    </div>
+  </section>
+
+  <div class="article-with-sidebar">
+  <article class="article-body">
+
+    <div class="toc">
+      <p class="toc-title">この記事の目次</p>
+      <ol class="toc-list">
+        <li><a href="#what">顎関節症とは</a></li>
+        <li><a href="#types">顎関節症の主な3タイプ</a></li>
+        <li><a href="#causes">顎関節症の原因</a></li>
+        <li><a href="#approach">当院の整体アプローチ</a></li>
+        <li><a href="#clusters">症状別の詳しい解説</a></li>
+      </ol>
+    </div>
+
+    <h2 id="what">顎関節症とは</h2>
+    <p>顎関節症とは、顎関節やその周囲の咀嚼筋に痛み・違和感が出る状態の総称。「口が開かない」「顎が鳴る」「顎が痛む」が代表的な3症状で、いずれかひとつでも該当すれば顎関節症のサインです。</p>
+    <p>20〜40代の女性に多い傾向がありますが、年齢・性別を問わずあらわれます。当院では<strong>食いしばりとセットで顎関節症が発症しているケース</strong>を多く見てきました。</p>
+
+    <h2 id="types">顎関節症の主な3タイプ</h2>
+    <ul>
+      <li><strong>クリックタイプ</strong>：開口時に「カクッ」「ポキッ」と音がする</li>
+      <li><strong>開口障害タイプ</strong>：指2本分以下しか口が開かない</li>
+      <li><strong>疼痛タイプ</strong>：顎まわり・耳周辺の痛みや違和感</li>
+    </ul>
+
+    <h2 id="causes">顎関節症の原因</h2>
+    <p>顎関節症は、ひとつの原因では起こりません。以下が複合的に重なって発症します。</p>
+    <ol>
+      <li>食いしばり・歯ぎしり（咬筋の過緊張）</li>
+      <li>姿勢のクセ（猫背・ストレートネック）</li>
+      <li>歯のかみ合わせの偏り</li>
+      <li>頬杖などの片側噛み・態癖（たいへき）</li>
+      <li>ストレスによる無意識の緊張</li>
+    </ol>
+
+    <h2 id="approach">当院の整体アプローチ</h2>
+    <p>顎関節症も、食いしばり起点で見立てていきます。</p>
+    <ol>
+      <li>症状の現状・頻度・きっかけの丁寧なヒアリング</li>
+      <li>開口量・顎の動き・左右差を評価</li>
+      <li>咬筋・側頭筋・外側翼突筋などのリリース</li>
+      <li>姿勢・首の調整で顎位の安定をサポート</li>
+      <li>日常のクセ（態癖）改善のセルフケア指導</li>
+    </ol>
+
+    <h2 id="clusters">症状別の詳しい解説</h2>
+    <p>「自分の症状に近いもの」を選んでお読みください。</p>
+    <div class="cluster-grid">
+      {clusters.map((c) => (
+        <a href={c.href} class="cluster-card">
+          <span class="cluster-number">{c.num}</span>
+          <span class="cluster-title">{c.title}</span>
+          <span class="cluster-arrow">→</span>
+        </a>
+      ))}
+    </div>
+
+  </article>
+  <SymptomsSidebar />
+  </div>
+
+  <section class="related-pillars">
+    <div class="container">
+      <span class="section-eyebrow">RELATED</span>
+      <h2 class="section-title">関連する症状</h2>
+      <p class="section-subtitle">顎関節症と連鎖して起こりやすい症状</p>
+      <div class="related-pillars-grid">
+        <a href="/symptoms/kuishibari" class="symptom-card">
+          <div class="emoji">🦷</div>
+          <h3>食いしばり</h3>
+          <p>顎関節症の主な原因のひとつ</p>
+        </a>
+        <a href="/symptoms/headache" class="symptom-card">
+          <div class="emoji">🤕</div>
+          <h3>頭痛</h3>
+          <p>顎の負担から頭痛に波及するケース</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>顎まわりのお悩み、ご相談ください</h2>
+      <p>口が開かない、顎が鳴る、痛む。ひとりで抱えず、お話を聞かせてください。</p>
+      <a href="/#reservation" class="cta-button large">初回相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>

@@ -1,11 +1,237 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const siteName = "食いしばり専門アゴケア整体";
+const title = `${siteName} | 福岡市早良区の食いしばり・頭痛・顎関節症 専門院`;
+const description = "食いしばり・頭痛・顎関節症のお悩みに、整体でアプローチする福岡市早良区の専門院。マウスピースや鎮痛剤では届かなかった、根本のこわばりに寄り添います。Google口コミ★5.0。";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": siteName,
+  "description": description,
+  "url": "https://agocare-fukuoka.com",
+  "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "原8丁目26",
+    "addressLocality": "福岡市早良区",
+    "addressRegion": "福岡県",
+    "postalCode": "814-0022",
+    "addressCountry": "JP"
+  },
+  "areaServed": ["福岡市早良区", "福岡市西区", "福岡市中央区"],
+  "priceRange": "¥¥",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "8"
+  }
+};
+
+const symptoms = [
+  {
+    href: "/symptoms/kuishibari",
+    emoji: "🦷",
+    title: "食いしばり",
+    desc: "朝起きると顎がだるい、歯がすり減る、マウスピースだけでは改善しない。",
+    keywords: "咬筋のこわばり ／ 歯ぎしり ／ エラ張り"
+  },
+  {
+    href: "/symptoms/headache",
+    emoji: "🤕",
+    title: "頭痛",
+    desc: "こめかみ・後頭部・目の奥の痛み。生理周期や天気で悪化する慢性頭痛。",
+    keywords: "緊張型頭痛 ／ 片頭痛 ／ 天気痛"
+  },
+  {
+    href: "/symptoms/tmj",
+    emoji: "😬",
+    title: "顎関節症",
+    desc: "口が開きにくい、顎がカクッと鳴る、顎の左右差、耳の違和感。",
+    keywords: "クリック音 ／ 開口障害 ／ 顎の左右差"
+  }
+];
+
+const checklist = [
+  "朝起きると顎がだるい・痛い",
+  "こめかみや頭が重く、頭痛が慢性化している",
+  "口を大きく開けると顎が鳴る／開きにくい",
+  "肩こり・首こりも一緒にひどい",
+  "歯医者でマウスピースを使っても改善しない",
+  "鎮痛剤を常用していて、できればやめたい",
+  "ストレスを感じると食いしばっている自覚がある"
+];
+
+const features = [
+  {
+    num: "01",
+    title: "「食いしばり起点」で全身を見立てる",
+    body: "頭痛も顎関節症も、食いしばりや姿勢のクセが連鎖して起こることが多いと考えています。当院は食いしばりという入口から、首・肩・全身のこわばりまで一貫してアプローチします。"
+  },
+  {
+    num: "02",
+    title: "歯科やマウスピースとは違う、整体の手技",
+    body: "歯科治療やマウスピースでは届かない「咬筋」「側頭筋」「首」のこわばりに、整体の手技でアプローチ。歯科との併用で相乗効果を狙う方も多くいらっしゃいます。"
+  },
+  {
+    num: "03",
+    title: "福岡市早良区で食いしばり/顎関節症に特化",
+    body: "肩こり・腰痛・骨盤矯正までなんでも対応する総合整体ではなく、食いしばり／頭痛／顎関節症の3つに集中。専門特化だからこそ、症状の見立てが深くなります。"
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description} structuredData={structuredData}>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">FUKUOKA — SAWARA</span>
+        <h1>
+          食いしばり・頭痛・顎関節症を、<br>
+          <span class="highlight">整体で。</span>
+        </h1>
+        <p class="hero-sub">
+          マウスピースや鎮痛剤では届かなかった、<br>
+          根本のこわばりに寄り添う整体院です。
+        </p>
+        <div class="hero-actions">
+          <a href="#reservation" class="cta-button large">初回相談・予約する →</a>
+          <a href="/symptoms" class="cta-button outline large">症状から探す</a>
+        </div>
+        <div class="hero-rating">
+          <span class="stars">★★★★★</span>
+          <span>5.0 ／ Google口コミ評価（8件）</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1000&q=80"
+          alt="アゴケア整体 イメージ"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3つの専門領域 -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow">SPECIALTY</span>
+      <h2 class="section-title">3つの専門領域</h2>
+      <p class="section-subtitle">
+        食いしばりを起点に、頭痛・顎関節症までトータルにアプローチ
+      </p>
+      <div class="symptoms-grid">
+        {symptoms.map((s) => (
+          <a href={s.href} class="symptom-card">
+            <div class="emoji">{s.emoji}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <p style="font-size: 11px; color: var(--color-text-light); margin: 0 0 14px;">{s.keywords}</p>
+            <span class="card-link">詳しく見る →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- お悩みチェック -->
+  <section style="background: var(--color-bg-cool);">
+    <div class="container">
+      <span class="section-eyebrow">CHECK</span>
+      <h2 class="section-title">こんなお悩みありませんか？</h2>
+      <p class="section-subtitle">3つ以上当てはまる方は、ぜひ一度ご相談ください</p>
+      <div class="checklist-box">
+        <ul class="checklist">
+          {checklist.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="checklist-footer">
+          ひとつでも気になる方は、お気軽にお問い合わせください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特徴 -->
+  <section class="features">
+    <div class="container">
+      <span class="section-eyebrow">WHY US</span>
+      <h2 class="section-title">アゴケア整体の3つの特徴</h2>
+      <p class="section-subtitle">他院との違い、選ばれている理由</p>
+      {features.map((f) => (
+        <div class="feature-item">
+          <div class="feature-icon">{f.num}</div>
+          <div>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 院内イメージ -->
+  <section>
+    <div class="container-narrow">
+      <span class="section-eyebrow">ABOUT</span>
+      <h2 class="section-title">院長の想い</h2>
+      <p class="section-subtitle">専門院をつくった理由</p>
+      <div class="hero-image" style="margin-bottom: 32px;">
+        <img
+          src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1000&q=80"
+          alt="院内イメージ"
+          loading="lazy"
+        />
+      </div>
+      <p style="font-size: 15px; line-height: 1.9;">
+        歯ぎしりやマウスピースでも改善しない食いしばりに、長く悩んでいる方を多く見てきました。歯科との連携や、生活習慣の見直しと併せて、整体で「咬筋」「側頭筋」「首」のこわばりを整えていくと、頭痛・顎関節症まで連鎖的に改善されていく方が多くいらっしゃいます。<br><br>
+        当院は食いしばり起点という独自の見立てで、福岡市早良区の皆さまの日常を支えていきたいと考えています。
+      </p>
+      <p style="text-align: center; margin-top: 32px;">
+        <a href="/about" class="cta-button outline">院長について詳しく見る →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section style="background: var(--color-bg-warm);">
+    <div class="container">
+      <span class="section-eyebrow">ACCESS</span>
+      <h2 class="section-title">アクセス・基本情報</h2>
+      <p class="section-subtitle">福岡市営地下鉄空港線「室見駅」「藤崎駅」エリア</p>
+      <div class="access-info">
+        <dl>
+          <dt>院名</dt>
+          <dd>食いしばり専門アゴケア整体</dd>
+          <dt>住所</dt>
+          <dd>〒814-0022 福岡県福岡市早良区原8丁目26</dd>
+          <dt>専門領域</dt>
+          <dd>食いしばり ／ 頭痛 ／ 顎関節症</dd>
+          <dt>営業時間</dt>
+          <dd>準備中（後日掲載）</dd>
+          <dt>定休日</dt>
+          <dd>準備中（後日掲載）</dd>
+        </dl>
+      </div>
+      <p style="text-align: center; margin-top: 32px;">
+        <a href="/access" class="cta-button outline">アクセス詳細 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="reservation">
+    <div class="container">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>
+        食いしばりや顎まわりのお悩みは、<br>
+        ひとりで抱えこまずに、お話を聞かせてください。
+      </p>
+      <a href="#" class="cta-button large">予約フォームへ（準備中）</a>
+    </div>
+  </section>
+
 </Layout>

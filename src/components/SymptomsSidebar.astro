@@ -1,0 +1,53 @@
+---
+import { pillars, isPublished } from '../data/symptoms';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const isCurrentPage = (href: string) => currentPath === href.replace(/\/$/, '');
+const isInPillar = (pillarKey: string) => currentPath.startsWith(`/symptoms/${pillarKey}`);
+---
+
+<aside class="symptoms-sidebar" aria-label="症状一覧サイドバー">
+  <div class="sidebar-inner">
+    <p class="sidebar-title">
+      <span class="sidebar-title-eyebrow">SYMPTOMS INDEX</span>
+      <span class="sidebar-title-main">症状から探す</span>
+    </p>
+
+    {pillars.map(pillar => (
+      <div class={`sidebar-pillar ${isInPillar(pillar.key) ? 'is-current' : ''}`}>
+        <a
+          href={pillar.href}
+          class={`sidebar-pillar-link ${isCurrentPage(pillar.href) ? 'active' : ''}`}
+        >
+          <span class="sidebar-pillar-emoji">{pillar.emoji}</span>
+          <span class="sidebar-pillar-name">{pillar.name}</span>
+          <span class="sidebar-pillar-count">{pillar.clusters.length}</span>
+        </a>
+
+        <ul class="sidebar-clusters">
+          {pillar.clusters.map(cluster => (
+            <li class={isCurrentPage(cluster.href) ? 'active' : ''}>
+              {isPublished(cluster.href) ? (
+                <a href={cluster.href}>
+                  <span class="sidebar-cluster-num">{cluster.num}</span>
+                  <span class="sidebar-cluster-title">{cluster.shortTitle}</span>
+                </a>
+              ) : (
+                <span class="sidebar-cluster-coming">
+                  <span class="sidebar-cluster-num">{cluster.num}</span>
+                  <span class="sidebar-cluster-title">{cluster.shortTitle}</span>
+                  <span class="sidebar-cluster-coming-label">準備中</span>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <div class="sidebar-cta">
+      <p class="sidebar-cta-text">どのカテゴリか<br>迷ったら</p>
+      <a href="/#reservation" class="sidebar-cta-button">相談する →</a>
+    </div>
+  </div>
+</aside>

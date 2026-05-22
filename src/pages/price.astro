@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "料金・コース | 食いしばり専門アゴケア整体";
+const description = "食いしばり・頭痛・顎関節症のお悩みに対応する、福岡市早良区アゴケア整体の料金とコースをご案内します。透明な価格設定です。";
+---
+
+<Layout title={title} description={description}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li aria-current="page">料金</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">PRICE</span>
+      <h1>料金・コース</h1>
+      <p class="article-lead">
+        透明な価格設定で、安心して通っていただけるようご案内しています。
+      </p>
+    </div>
+  </section>
+
+  <article class="article-body">
+
+    <p style="background: var(--color-bg-warm); padding: 16px 20px; border-radius: 8px; font-size: 13px; color: var(--color-text-muted); margin-bottom: 32px;">
+      ※ 正式な料金は後日掲載いたします。現在の表記はサンプルです。
+    </p>
+
+    <h2>料金表（サンプル）</h2>
+    <div style="background: #fff; border: 1px solid var(--color-border); border-radius: 12px; padding: 28px; margin-bottom: 32px;">
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--color-border-light);">
+            <td style="padding: 16px 0; font-weight: 700; color: var(--color-primary);">初回カウンセリング＋施術</td>
+            <td style="padding: 16px 0; text-align: right; font-size: 18px; font-weight: 700;">¥◯◯◯◯</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border-light);">
+            <td style="padding: 16px 0; font-weight: 700; color: var(--color-primary);">2回目以降（通常施術）</td>
+            <td style="padding: 16px 0; text-align: right; font-size: 18px; font-weight: 700;">¥◯◯◯◯</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border-light);">
+            <td style="padding: 16px 0; font-weight: 700; color: var(--color-primary);">回数券（5回分）</td>
+            <td style="padding: 16px 0; text-align: right; font-size: 18px; font-weight: 700;">¥◯◯◯◯</td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 0; font-weight: 700; color: var(--color-primary);">回数券（10回分）</td>
+            <td style="padding: 16px 0; text-align: right; font-size: 18px; font-weight: 700;">¥◯◯◯◯</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>料金に含まれるもの</h2>
+    <ul>
+      <li>初回カウンセリング（症状・生活習慣・既往歴のヒアリング）</li>
+      <li>姿勢・顎位の評価</li>
+      <li>整体の手技による施術</li>
+      <li>セルフケアの個別アドバイス</li>
+      <li>次回予約のご案内</li>
+    </ul>
+
+    <h2>お支払い方法</h2>
+    <ul>
+      <li>現金</li>
+      <li>クレジットカード（後日対応予定）</li>
+      <li>PayPay / 各種電子マネー（後日対応予定）</li>
+    </ul>
+
+    <h2>料金に関するご注意</h2>
+    <ul>
+      <li>整体は健康保険適用外の自費施術となります</li>
+      <li>強引な回数券の勧誘はいたしません</li>
+      <li>キャンセル・変更は前日までにご連絡をお願いします</li>
+    </ul>
+
+  </article>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>初回予約のご案内</h2>
+      <p>ご不明点はお気軽にお問い合わせください。</p>
+      <a href="/#reservation" class="cta-button large">初回相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>

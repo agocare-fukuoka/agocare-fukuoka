@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "よくある質問 | 食いしばり専門アゴケア整体";
+const description = "食いしばり・頭痛・顎関節症の整体施術についてよくいただくご質問にお答えします。料金、施術内容、マウスピース併用、保険適用、子供の対応など。";
+
+const faqs = [
+  {
+    q: "初診はどのくらい時間がかかりますか？",
+    a: "初回はカウンセリング込みで60〜90分を目安にお考えください。症状や生活習慣を丁寧にお伺いしたうえで施術に入ります。"
+  },
+  {
+    q: "予約は必要ですか？当日でも対応してもらえますか？",
+    a: "完全予約制となっております。当日のご予約も空き状況によりお受けできる場合がありますので、お気軽にお問い合わせください。"
+  },
+  {
+    q: "マウスピースを使っていますが、整体は受けてもいいですか？",
+    a: "はい、マウスピース併用の方も歓迎です。マウスピースは「歯を守る」役割、整体は「筋肉と姿勢のクセを整える」役割で、両方ご一緒に取り組むことで相乗効果が期待できます。"
+  },
+  {
+    q: "子どもや高齢者も施術を受けられますか？",
+    a: "対応可能です。お子様の食いしばりや、高齢の方の顎まわりのお悩みもお受けしております。ご予約時にお声がけください。"
+  },
+  {
+    q: "整体は痛くないですか？",
+    a: "ボキボキするような強い手技ではなく、筋肉のこわばりを丁寧にリリースする整体です。痛みを感じることはほとんどありません。施術中、痛い箇所があれば遠慮なくお伝えください。"
+  },
+  {
+    q: "どのくらい通えば改善しますか？",
+    a: "症状や生活習慣により個人差があります。一般的には3〜5回の施術で変化を感じる方が多いです。セルフケアと並行することで、より早い改善が期待できます。"
+  },
+  {
+    q: "キャンセル・予約変更はできますか？",
+    a: "可能です。前日までにご連絡をお願いいたします。当日キャンセルが続く場合のみ、ご予約をお受けしづらくなることがあります。"
+  },
+  {
+    q: "保険は使えますか？",
+    a: "整体は健康保険適用外の自費施術となります。あらかじめご了承ください。"
+  },
+  {
+    q: "駐車場はありますか？",
+    a: "駐車場情報は後日掲載いたします。お手数ですが、現在は近隣のコインパーキングのご利用をお願いいたします。"
+  },
+  {
+    q: "クレジットカードは使えますか？",
+    a: "現在は現金のみのお取扱いとなります。クレジットカード・電子マネー対応は順次予定しています。"
+  }
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li aria-current="page">よくある質問</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">FAQ</span>
+      <h1>よくあるご質問</h1>
+      <p class="article-lead">
+        ご予約・施術・お支払いについて、<br>
+        いただくことの多いご質問にお答えします。
+      </p>
+    </div>
+  </section>
+
+  <article class="article-body">
+    {faqs.map((faq, i) => (
+      <div style="background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; color: var(--color-primary); margin: 0 0 12px; padding-left: 32px; position: relative;">
+          <span style="position: absolute; left: 0; top: -2px; background: var(--color-accent); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">Q</span>
+          {faq.q}
+        </h3>
+        <p style="font-size: 14px; line-height: 1.8; margin: 0; padding-left: 32px; position: relative;">
+          <span style="position: absolute; left: 0; top: -2px; background: var(--color-primary); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">A</span>
+          {faq.a}
+        </p>
+      </div>
+    ))}
+  </article>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>その他のご質問は</h2>
+      <p>お電話・お問い合わせフォームよりお気軽にどうぞ。</p>
+      <a href="/#reservation" class="cta-button large">初回相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "アクセス・営業時間 | 食いしばり専門アゴケア整体";
+const description = "福岡市早良区の食いしばり専門アゴケア整体のアクセス・営業時間・駐車場情報です。福岡市営地下鉄空港線「室見駅」「藤崎駅」エリア。";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "食いしばり専門アゴケア整体",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "原8丁目26",
+    "addressLocality": "福岡市早良区",
+    "addressRegion": "福岡県",
+    "postalCode": "814-0022",
+    "addressCountry": "JP"
+  }
+};
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li aria-current="page">アクセス</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">ACCESS</span>
+      <h1>アクセス・営業時間</h1>
+      <p class="article-lead">
+        福岡市営地下鉄空港線「室見駅」「藤崎駅」エリア。<br>
+        ご来院前にお目通しください。
+      </p>
+    </div>
+  </section>
+
+  <article class="article-body">
+
+    <h2>基本情報</h2>
+    <div class="access-info">
+      <dl>
+        <dt>院名</dt>
+        <dd>食いしばり専門アゴケア整体</dd>
+
+        <dt>住所</dt>
+        <dd>〒814-0022 福岡県福岡市早良区原8丁目26</dd>
+
+        <dt>電話</dt>
+        <dd>（後日掲載）</dd>
+
+        <dt>営業時間</dt>
+        <dd>（後日掲載）</dd>
+
+        <dt>定休日</dt>
+        <dd>（後日掲載）</dd>
+
+        <dt>駐車場</dt>
+        <dd>（後日掲載）</dd>
+
+        <dt>支払方法</dt>
+        <dd>現金 ／ 順次その他対応予定</dd>
+      </dl>
+    </div>
+
+    <h2>最寄り駅からのアクセス</h2>
+    <ul>
+      <li><strong>福岡市営地下鉄空港線「室見駅」</strong>から徒歩◯分</li>
+      <li><strong>福岡市営地下鉄空港線「藤崎駅」</strong>から徒歩◯分</li>
+      <li>西鉄バス「原◯丁目」バス停から徒歩◯分</li>
+    </ul>
+
+    <h2>院内のご案内</h2>
+    <div class="hero-image" style="margin: 24px 0;">
+      <img
+        src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1000&q=80"
+        alt="院内イメージ"
+        loading="lazy"
+      />
+    </div>
+    <p>清潔感ある静かな空間で、リラックスしてお過ごしいただける環境を整えています。（院内写真は順次掲載予定）</p>
+
+    <h2>周辺マップ</h2>
+    <p style="background: var(--color-bg-cool); padding: 20px; border-radius: 8px; text-align: center; color: var(--color-text-muted);">
+      ※ Google Maps埋め込みは後日対応予定
+    </p>
+
+    <h2>ご来院時のお願い</h2>
+    <ul>
+      <li>ご予約時間の5〜10分前にお越しください</li>
+      <li>動きやすい服装でお越しいただくとスムーズです（着替えのご用意もございます）</li>
+      <li>歯科でいただいている資料（マウスピース等）があれば、お持ちください</li>
+    </ul>
+
+  </article>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>ご来院お待ちしています</h2>
+      <p>ご不明な点はお気軽にお問い合わせください。</p>
+      <a href="/#reservation" class="cta-button large">初回相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>

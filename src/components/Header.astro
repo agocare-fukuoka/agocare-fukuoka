@@ -1,0 +1,63 @@
+---
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <span class="site-logo-sub">食いしばり専門</span>
+      <span class="site-logo-main">アゴケア整体</span>
+    </a>
+
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      <ul class="nav-list">
+        <li class="nav-item has-dropdown">
+          <a href="/symptoms" class={isActive('/symptoms') ? 'nav-link active' : 'nav-link'}>
+            症状から探す<span class="dropdown-arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/symptoms/kuishibari">🦷 食いしばり</a></li>
+            <li><a href="/symptoms/headache">🤕 頭痛</a></li>
+            <li><a href="/symptoms/tmj">😬 顎関節症</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="/about" class={isActive('/about') ? 'nav-link active' : 'nav-link'}>院について</a></li>
+        <li class="nav-item"><a href="/price" class={isActive('/price') ? 'nav-link active' : 'nav-link'}>料金</a></li>
+        <li class="nav-item"><a href="/access" class={isActive('/access') ? 'nav-link active' : 'nav-link'}>アクセス</a></li>
+        <li class="nav-item"><a href="/faq" class={isActive('/faq') ? 'nav-link active' : 'nav-link'}>よくある質問</a></li>
+      </ul>
+    </nav>
+
+    <a href="#reservation" class="header-cta">予約する</a>
+
+    <button class="mobile-menu-toggle" aria-label="メニューを開く" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="/symptoms/kuishibari">🦷 食いしばり</a></li>
+      <li><a href="/symptoms/headache">🤕 頭痛</a></li>
+      <li><a href="/symptoms/tmj">😬 顎関節症</a></li>
+      <li class="divider"></li>
+      <li><a href="/about">院について</a></li>
+      <li><a href="/price">料金</a></li>
+      <li><a href="/access">アクセス</a></li>
+      <li><a href="/faq">よくある質問</a></li>
+      <li class="mobile-cta"><a href="#reservation">予約する</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobileMenuToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('open');
+    toggle.classList.toggle('open');
+  });
+</script>

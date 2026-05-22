@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { pillars, isPublished } from '../../data/symptoms';
+
+const title = "症状から探す（全30テーマ） | 食いしばり専門アゴケア整体";
+const description = "食いしばり・頭痛・顎関節症の3カテゴリ・全30テーマからお悩みに合うページを探せます。福岡市早良区の食いしばり専門アゴケア整体。";
+---
+
+<Layout title={title} description={description}>
+
+  <nav aria-label="パンくず" class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li aria-current="page">症状から探す</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="article-header">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="section-eyebrow">SYMPTOMS — 30 TOPICS</span>
+      <h1>症状から探す</h1>
+      <p class="article-lead">
+        食いしばり・頭痛・顎関節症の3カテゴリ、<br>
+        全30テーマからあなたのお悩みに近いページをお選びください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 3つのPillarカード -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow">3 PILLARS</span>
+      <h2 class="section-title">3つの専門領域</h2>
+      <p class="section-subtitle">まずは大きなカテゴリから</p>
+      <div class="symptoms-grid">
+        {pillars.map((p) => (
+          <a href={p.href} class="symptom-card">
+            <div class="emoji">{p.emoji}</div>
+            <h3>{p.name}</h3>
+            <p>{p.description}</p>
+            <p style="font-size: 11px; color: var(--color-text-light); margin: 0 0 14px;">関連テーマ {p.clusters.length}件</p>
+            <span class="card-link">概要を見る →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 全30テーマの完全一覧 -->
+  <section class="all-symptoms-section">
+    <div class="container">
+      <span class="section-eyebrow">FULL INDEX</span>
+      <h2 class="section-title">全30テーマ 一覧</h2>
+      <p class="section-subtitle">具体的なお悩みからお選びいただけます</p>
+
+      {pillars.map((pillar) => (
+        <div class="all-symptoms-pillar">
+          <div class="all-symptoms-pillar-header">
+            <span class="all-symptoms-pillar-emoji">{pillar.emoji}</span>
+            <div class="all-symptoms-pillar-meta">
+              <h3 class="all-symptoms-pillar-name">{pillar.name}</h3>
+              <p class="all-symptoms-pillar-desc">{pillar.description}</p>
+            </div>
+            <a href={pillar.href} class="all-symptoms-pillar-link">{pillar.name}の概要 →</a>
+          </div>
+
+          <div class="all-symptoms-grid">
+            {pillar.clusters.map((cluster) => (
+              isPublished(cluster.href) ? (
+                <a href={cluster.href} class="all-symptoms-card">
+                  <span class="num">{cluster.num}</span>
+                  <span class="title">{cluster.title}</span>
+                  <span class="arrow">→</span>
+                </a>
+              ) : (
+                <div class="all-symptoms-card is-coming" title="準備中">
+                  <span class="num">{cluster.num}</span>
+                  <span class="title">{cluster.title}</span>
+                  <span class="coming-label">準備中</span>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>どのカテゴリか迷ったら</h2>
+      <p>症状の見立てから一緒に考えます。<br>まずはお気軽にご相談ください。</p>
+      <a href="/#reservation" class="cta-button large">相談・予約する</a>
+    </div>
+  </section>
+
+</Layout>
