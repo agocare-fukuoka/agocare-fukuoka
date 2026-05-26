@@ -1,19 +1,19 @@
 /* ===== Design Tokens ===== */
 :root {
-  --color-primary: #2d4a3e;
-  --color-primary-light: #4d6d5e;
-  --color-primary-dark: #1f3329;
-  --color-accent: #d97757;
-  --color-accent-dark: #b85a3d;
-  --color-bg: #fbfaf6;
-  --color-bg-warm: #f3eee3;
-  --color-bg-cool: #f0f4f1;
-  --color-card-bg: #ffffff;
-  --color-text: #2b2b2b;
-  --color-text-muted: #6b6b6b;
-  --color-text-light: #9a9a9a;
-  --color-border: #e7e4dc;
-  --color-border-light: #f0eee8;
+  --color-primary: #5e6b4f;
+  --color-primary-light: #7d8a6e;
+  --color-primary-dark: #444f37;
+  --color-accent: #b08866;
+  --color-accent-dark: #946d4c;
+  --color-bg: #f5efe6;
+  --color-bg-warm: #ede4d2;
+  --color-bg-cool: #ecede2;
+  --color-card-bg: #fbf8f1;
+  --color-text: #3a342c;
+  --color-text-muted: #756e62;
+  --color-text-light: #a39c8e;
+  --color-border: #d9d2c1;
+  --color-border-light: #ebe4d4;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -59,7 +59,7 @@ section { padding: 72px 0; }
 
 /* ===== Header ===== */
 .site-header {
-  background: rgba(251, 250, 246, 0.96);
+  background: rgba(245, 239, 230, 0.96);
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid var(--color-border-light);
   padding: 12px 0;
